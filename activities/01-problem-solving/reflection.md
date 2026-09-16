@@ -1,0 +1,1 @@
+I developed my solution by identifying problem analysis: input, process, and output, then breaking it into smaller step, and writing the pseudocode in correct order. Organizing and committing my files helped me document my work because it's easier to review and track my progress. 

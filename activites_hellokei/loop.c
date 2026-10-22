@@ -3,11 +3,9 @@
 #include <string.h>
 #include <windows.h>
 
-#define RIGHT 130 
-#define BOTTOM 43
 
 void gotoxy(int x, int y) {
-    COORD c = { x, y };
+    COORD c = {(SHORT)x, (SHORT)y };
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), c);
 }
 
@@ -17,39 +15,35 @@ int main() {
 
     system("cls");
 
-    // Move your name across the top
-    for (x = 0; x <= RIGHT - strlen(name); x++) {
+    for (x = 0; x <= 155; x++) {
         system ("cls");
         gotoxy(x, 0);
         printf("%s", name);
         Sleep(10);
     }
 
-    // Move your name down the right side
-    for (y = 1; y <= BOTTOM; y++) {
+    for (y = 1; y <= 43; y++) {
         system ("cls");
-        gotoxy(RIGHT - strlen(name), y);
+        gotoxy(155, y);
         printf("%s", name);
         Sleep(10);
     }
 
-    // Move your name across the bottom
-    for (x = RIGHT - strlen(name) - 1; x >= 0; x--) {
+    for (x = 155; x >= 0; x--) {
         system ("cls");
-        gotoxy(x, BOTTOM);
+        gotoxy(x, 43);
         printf("%s", name);
         Sleep(10);
     }
 
-    // Move your name up the left side
-    for (y = BOTTOM - 1; y > 0; y--) {
+    for (y = 43; y > 0; y--) {
         system ("cls");
         gotoxy(0, y);
         printf("%s", name);
         Sleep(10);
     }
 
-    gotoxy(0, BOTTOM + 1);
+    gotoxy(0, 43);
     getchar();
 
     return 0;
